@@ -1,0 +1,25 @@
+<nav>
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}">
+    {{ if .Pre }}
+    {{ $icon := printf "<i class=\"%s\"></i> " .Pre | safeHTML }}
+    {{ $icon }}
+    {{ end }}
+    {{ $text := print .Name | safeHTML }}
+    {{ $text }}
+    </a><br/>
+    {{ end }}
+</nav>
+<br/>
+<nav>
+{{ range .Site.Menus.social }}
+{{ $text := printf "<span style=\"color: %s\">%s</span> " .Post .Name | safeHTML }}
+<a title="{{ $text }}" href="{{ .URL }}">
+{{ if .Pre }}
+{{ $icon := printf "<i style=\"color: %s\" class=\"%s\"></i> " .Post .Pre | safeHTML }}
+{{ $icon }}
+{{ end }}
+{{ $text }}
+</a><br/>
+{{ end }}
+</nav>

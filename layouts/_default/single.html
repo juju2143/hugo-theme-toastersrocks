@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "articlehead.html" . }}
+    <h2 name="top">{{ .Title }}</h2>
+    <p>{{ .Description }}</p>
+    {{ if not .Params.IsPage }}
+    {{ partial "metadata.html" . }}
+    {{ end }}
+    </div>
+    {{ .Content }}
+</article>
+{{ if not .Params.IsPage }}
+<ul class="pagination">
+    {{ with .Prev }}
+    <li class="page-item">
+      <a class="previous" href="{{.Permalink}}">« {{.Title}}</a>
+    </li>
+    {{ end }}
+    {{ with .Next }}
+    <li class="page-item">
+      <a class="next" href="{{.Permalink}}">{{.Title}} »</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ if not .Params.HideComments }}
+<article>
+    {{ template "_internal/disqus.html" . }}
+</article>
+{{ end }}
+{{ end }}

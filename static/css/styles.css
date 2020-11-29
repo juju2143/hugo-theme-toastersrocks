@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'pxplus_ibm_vga8regular';
+    src: url('/fonts/pxplus_ibm_vga8.eot');
+    src: url('/fonts/pxplus_ibm_vga8.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/pxplus_ibm_vga8.woff2') format('woff2'),
+         url('/fonts/pxplus_ibm_vga8.woff') format('woff'),
+         url('/fonts/pxplus_ibm_vga8.ttf') format('truetype'),
+         url('/fonts/pxplus_ibm_vga8.svg#pxplus_ibm_vga8regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chaloult condensé';
+    src: url('/fonts/CHALCN__.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chaloult condensé';
+    src: url('/fonts/CHALCDGN.TTF');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chaloult';
+    src: url('/fonts/CHALDGN_.TTF');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chaloult';
+    src: url('/fonts/CHALGIN_.TTF');
+    font-weight: bolder;
+    font-style: italic;
+}
+
+body
+{
+    font-family: 'Chaloult condensé', sans-serif;
+    font-size: 16px;
+    background: url('/img/bg.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+article, header, footer, aside
+{
+    background-color: rgba(32,0,32,0.8);
+    color: white;
+    padding: 2em;
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+main, header, footer
+{
+    margin: 1em auto 0 auto;
+    width: 768px;
+    box-sizing: border-box;
+}
+
+header
+{
+    text-align: center;
+    position: relative;
+}
+
+header nav
+{
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+header h1
+{
+    margin: 0;
+}
+
+aside
+{
+    float: left;
+    width: 15%;
+}
+
+article
+{
+    margin: 1em 0 0 calc(15% + 5em);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.metadata
+{
+    --height: calc(652.8px - 3em);
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 1.5em;
+}
+
+main:after
+{
+    clear: both;
+}
+
+h1,h2,h3,h4,h5,h6,nav
+{
+    font-family: 'Chaloult', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    text-shadow: 5px 5px 5px #000000;
+}
+
+a
+{
+    color: #cc00cc;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px #000000;
+}
+
+article img
+{
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+table
+{
+    width: 100%;
+    border-radius: 16px;
+    padding: 4px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    background-color: rgba(32,0,32,0.5);
+}
+
+code
+{
+    font-family: 'pxplus_ibm_vga8regular';
+    font-size: 16px;
+}
+
+.pagination
+{
+    font-family: 'Chaloult', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    margin: 2em 0 2em calc(15% + 5em);
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.pagination .page-item
+{
+    display: inline-block;
+    background-color: rgba(32,0,32,0.8);
+    color: white;
+    padding: 1em;
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.pagination .page-item.disabled
+{
+    display: none;
+}
+
+.pagination .page-item.active
+{
+    background-color: rgba(128,0,128,0.8);
+}
+
+@media screen and (max-width: 1280px)
+{
+    main, header, footer
+    {
+        margin: 1em 20% 0 20%;
+        width: unset;
+    }
+    .metadata
+    {
+        --height: 45vw;
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    main, header, footer
+    {
+        margin: 1em 1em 0 1em;
+    }
+    .metadata
+    {
+        --height: calc(85vw - 6em);
+    }
+}
+
+@media screen and (max-width: 640px)
+{
+    aside
+    {
+        float: none;
+        width: unset;
+    }
+    aside, article
+    {
+        margin: 1em 0 0 0;
+    }
+    .pagination
+    {
+        margin: 2em 0 2em 0;
+    }
+    .metadata
+    {
+        --height: calc(100vw - 2em);
+    }
+}

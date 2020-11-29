@@ -1,0 +1,11 @@
+{{ if .Params.Images }}
+{{ $img := index .Params.Images 0 }}
+{{ with ( imageConfig ( printf "/static%s" $img ) ) }}
+{{ $ratio := (div .Height (add 0.0 .Width)) }}
+<article style="background-image: url('{{ $img }}');">
+    <div class="metadata" style="height: calc((var(--height) - 2em) * {{ $ratio }} - 3.5em)">
+{{ end }}
+{{ else }}
+<article>
+    <div>
+{{ end }}
