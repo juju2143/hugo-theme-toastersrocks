@@ -6,7 +6,9 @@
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/syntax.css" />
-    <script src="https://kit.fontawesome.com/8ced65a629.js" crossorigin="anonymous"></script>
+    {{ $fontawesome := resources.Get "css/fontawesome.css" }}
+    {{ $styles := resources.Get "css/styles.css" }}
+    {{ $syntax := resources.Get "css/syntax.css" }}
+    {{ $css := slice $fontawesome $styles $syntax | resources.Concat "css/toastersrocks.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" />
 </head>
