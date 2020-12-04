@@ -5,6 +5,7 @@
     {{ hugo.Generator }}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
+    <meta name="theme-color" content="#660066">
     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     {{ $fontawesome := resources.Get "css/fontawesome.css" }}
     {{ $styles := resources.Get "css/styles.css" }}
